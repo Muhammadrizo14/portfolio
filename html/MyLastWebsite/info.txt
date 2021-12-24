@@ -1,0 +1,10 @@
+margin-right: 27px;
+border: 2px solid #4985FF;
+height: 92px;
+border-radius: 50%;
+width: 98px;
+
+
+background: #F6F6F8;
+
+background: #F6F6F8;
