@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+
+    <!-- Настройки -->
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+    <!-- Название сайта -->
+    <title>Manta</title>
+
+    <!-- Стили -->
+    <link rel="stylesheet" href="css/burger.css">
+    <link rel="stylesheet" href="css/swiper.css">
+    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+
+    <!-- Прелоадер -->
+    <div class="loader-wrapper">
+        <div class="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <!-- Курсор -->
+    <div class='cursor' id="cursor"></div>
+    <div class='cursor2' id="cursor2"></div>
+    <div class='cursor3' id="cursor3"></div>
+
+
+    <div class="wrapper">
+        <!-- Шапка страницы -->
+        <header id="header">
+            <div class="full">
+                <div class="header__content">
+                    <div class="logo">
+                        <a href="index.html" class="hover-target"><img src="img/logo.png" alt=""></a>
+                    </div>
+                    <div class="burger-menu">
+                        <a href="#" class="burger-menu_button">
+                            <spun class="burger-menu_lines"></spun>
+                        </a>
+                        <nav class="burger-menu_nav">
+                            <a href="#service" class="burger-menu_link hover-target">Услуги</a>
+                            <a href="#project" class="burger-menu_link hover-target">Проекты</a>
+                            <a href="#skills" class="burger-menu_link hover-target">Навыки</a>
+                            <a href="#contact" class="burger-menu_link hover-target">Контакты</a>
+                        </nav>
+                        <div class="burger-menu_overlay"></div>
+                    </div>
+                </div>
+
+                <div class="mage">
+                    <script type="x-shader/x-vertex" id="vertexshader">
+
+                        attribute float size;
+                        attribute vec3 customColor;
+                        varying vec3 vColor;
+                      
+                        void main() {
+                      
+                          vColor = customColor;
+                          vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+                          gl_PointSize = size * ( 300.0 / -mvPosition.z );
+                          gl_Position = projectionMatrix * mvPosition;
+                      
+                        }
+                      
+
+                </script>
+                    <script type="x-shader/x-fragment" id="fragmentshader">
+
+                    uniform vec3 color;
+                    uniform sampler2D pointTexture;
+                    
+                    varying vec3 vColor;
+                    
+                    void main() {
+                    
+                        gl_FragColor = vec4( color * vColor, 1.0 );
+                        gl_FragColor = gl_FragColor * texture2D( pointTexture, gl_PointCoord );
+                    
+                    }
+
+                </script>
+                    <div id="magic"></div>
+                </div>
+                <div class="all_c">
+                    <h1>Full <span>stack</span> <br> <span>Програм</span> мист</h1>
+                </div>
+                <div class="scroll-downs">
+                    <div class="mousey">
+                        <div class="scroller"></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="start">
+                <div class="start__body">
+                    <div class="start__content">
+                        <div class="start__cards">
+                            <div class="start__card startupdir" data-aos="fade-right">
+                                <div class="start__card__body hover-target">
+                                    <h3>Начал с</h3>
+                                    <p>2012</p>
+                                </div>
+                            </div>
+                            <div class="start__card projectdir" data-aos="fade-up">
+                                <div class="start__card__body hover-target">
+                                    <h3>Завершенных проектов</h3>
+                                    <p>50+</p>
+                                </div>
+                            </div>
+                            <div class="start__card awwardsdir" data-aos="fade-left">
+                                <div class="start__card__body hover-target">
+                                    <h3>Награды</h3>
+                                    <p>5+</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="service" id="service">
+                <h1 class="service__title">МОИ УСЛУГИ</h1>
+                <img src="img/bg_cr.png" alt="">
+                <div class="service__lists">
+                    <div class="anal">
+                        <h1 class="hover-target" data-aos="fade-right">Создание сайтов /</h1>
+                        <h1 class="hover-target" data-aos="fade-left">/ Копирование сайтов /</h1>
+                    </div>
+                    <div class="web">
+                        <h1 class="hover-target" data-aos="fade-right">Лендинг /</h1>
+                        <h1 class="hover-target" data-aos="fade-left">/ Интернет магазин /</h1>
+                    </div>
+                    <div class="bran">
+                        <h1 class="hover-target" data-aos="fade-right">Создание ботов /</h1>
+                        <h1 class="hover-target" data-aos="fade-left">/ Дороботать сайтов /</h1>
+                    </div>
+                </div>
+            </section>
+            <section class="myproj project" id="project">
+                <div class="project__first__text">
+                    <h1 class="project__title">Мои последние проекты</h1>
+                    <p class="project__subtitle">Больше работ в моём <a href="https://kwork.ru/user/xxafiz69"
+                            target="_blank" class="project__subtitle__link">кворке!</a>
+                    </p>
+                </div>
+                <div class="project__cards">
+                    <div class="project__card" data-aos="fade-right">
+                        <a href="https://manup.netlify.app/" target="_blank" style="color: #fff;" class="hover-target">
+                            <div class="project__image">
+                                <img src="img/myworks/manup.png" alt="" class="project__card__1" width="450">
+                            </div>
+                            <div class="project__card__text">
+                                <div class="first__card__text">
+                                    <h1 style="font-size: 20px;">Manup</h1>
+                                </div>
+                                <div class="second__card__text">
+                                    <h3>Верстка HTML CSS JS без (bootsrap)</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="project__card" data-aos="fade-up">
+                        <a href="https://spb-master.vercel.app/" target="_blank" style="color: #fff;"
+                            class="hover-target">
+                            <div class="project__image">
+                                <img src="img/myworks/spb.png" alt="" class="project__card__1" width="450">
+                            </div>
+                            <div class="project__card__text">
+                                <div class="first__card__text">
+                                    <h1>Биржа</h1>
+                                </div>
+                                <div class="second__card__text">
+                                    <h3>Cайт на React js</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="project__card" data-aos="fade-left">
+                        <a href="https://abdulhafiz.netlify.app/" target="_blank" style="color: #fff;"
+                            class="hover-target">
+                            <div class="project__image">
+                                <img src="img/myworks/company.png" alt="" class="project__card__1" width="450">
+                            </div>
+                            <div class="project__card__text">
+                                <div class="first__card__text">
+                                    <h1>Портфолио</h1>
+                                </div>
+                                <div class="second__card__text">
+                                    <h3>Верстка HTML CSS JS без (bootsrap)</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section class="amazon" id="skills">
+                <div class="amozon__items">
+                    <a target="_blank" class="hover-target" href="https://www.typescriptlang.org/"><img src="img/Typescript.png" alt=""
+                            class="amazon__item html"></a>
+                    <a target="_blank" class="hover-target" href="https://www.javascript.com/"><img src="img/sky.png" alt=""
+                            class="amazon__item js"></a>
+                    <a target="_blank" class="hover-target" href="https://nestjs.com/"><img src="img/logo-small.svg" width="220px"
+                            height="220px" alt="" class="amazon__item css"></a>
+                    <a target="_blank" class="hover-target" href="https://www.python.org/"><img src="img/microsoft.png" alt=""
+                            class="amazon__item python"></a>
+
+                </div>
+            </section>
+            <section class="amazon" id="skills">
+                <div class="amozon__items">
+                    <a target="_blank" class="hover-target" href="https://reactjs.org/">
+                        <img src="img/React.png" alt="" class="amazon__item html">
+                    </a>
+                    <a target="_blank" class="hover-target" href="https://angular.io/">
+                        <img src="img/angular.png" alt="" class="amazon__item html">
+                    </a>
+                    <a target="_blank" class="hover-target" href="https://vuejs.org/"><img src="img/amazon.png" alt=""
+                            class="amazon__item html">
+                    </a>
+                    <a target="_blank" class="hover-target" href="https://www.djangoproject.com/"><img src="img/wordpress.png" alt=""
+                            class="amazon__item django"></a>
+                </div>
+            </section>
+        </main>
+
+        <!-- Кнопка вверх -->
+        <button id="topBtn">&uparrow;</button>
+    </div>
+
+    <!-- Подвал Стараницы -->
+    <footer id="contact">
+        <div class="footer__items">
+            <div class="footer__first">
+                <a href="index.html" class="hover-target"><img src="img/footer%20logo.png" alt=""></a>
+            </div>
+            <div class="footer__second">
+                <ul>
+                    <li>
+                        <a class="hover-target" href="/">Home</a>
+                    </li>
+                    <li>
+                        <a class="hover-target" href="#service">Услуги</a>
+                    </li>
+                    <li>
+                        <a class="hover-target" href="#project">Проекты</a>
+                    </li>
+                    <li>
+                        <a class="hover-target" href="#skills">Навыки</a>
+                    </li>
+                    <li>
+                        <a class="hover-target" href="#contact">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__thirth">
+                <ul>
+                    <li>
+                        <a  class="hover-target" target="_blank" href="https://github.com/Muhammadrizo14">GitHub</a>
+                    </li>
+                    <li>
+                        <a class="hover-target"  href="https://t.me/ubuntuous" target="_blank">Telegram</a>
+                    </li>
+                    <li>
+                        <a class="hover-target"  href="https://kwork.ru/user/xxafiz69" target="_blank">Kwork</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Скрипты -->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.ripples.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src='js/three.min.js'></script>
+    <script src="js/swiper.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
